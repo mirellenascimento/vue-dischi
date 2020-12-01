@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Dischi Musicali</title>
+        <!-- VUE -->
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+        <!-- AXIOS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
+
+        <!-- FONT FAMILY -->
+        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+
+        <!-- STYLESHEET -->
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+      <div id="root">
+
+        <header>
+            <div class="container">
+                <img src="img/logo.png" alt="logo" />
+            </div>
+        </header>
+
+        <div class="cds-container container">
+            <!-- Disco ad esempio -->
+            <div v-for="album in albums" class="cd">
+                <img :src="album.poster" alt="">
+                <h3>{{album.title}}</h3>
+                <span class="author">{{album.author}}</span>
+                <span class="year">{{album.year}}</span>
+            </div>
+        </div>
+
+
+
+      </div><!-- root end -->
+
+
+        <script src="js/main.js" charset="utf-8"></script>
+    </body>
+</html>
