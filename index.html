@@ -24,9 +24,22 @@
             </div>
         </header>
 
+        <div class="container genre-container">
+          <label for="genre">Scegli per genere:</label>
+          <select @change="selectGenre($event)"  name="genre" id="genre">
+            <option value="all">All</option>
+             <option value="pop">Pop</option>
+             <option value="rock">Rock</option>
+             <option value="metal">Metal</option>
+             <option value="jazz">Jazz</option>
+          </select>
+
+        </div>
+
+
         <div class="cds-container container">
             <!-- Disco ad esempio -->
-            <div v-for="album in albums" class="cd">
+            <div v-for="album in filteredAlbums" class="cd">
                 <img :src="album.poster" alt="">
                 <h3>{{album.title}}</h3>
                 <span class="author">{{album.author}}</span>

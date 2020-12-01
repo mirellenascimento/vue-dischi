@@ -34,6 +34,21 @@ header img {
     padding: 100px 0;
 }
 
+.genre-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.genre-container > *{
+  padding: 5px;
+  font-size: 1rem;
+
+}
+
 .cd {
     display: flex;
     justify-content: flex-start;
