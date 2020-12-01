@@ -2,20 +2,9 @@ const mySpotify = new Vue({
   el: '#root',
   data: {
     albums: [],
-    filteredAlbums: [],
     selectedGenre: 'all',
   },
   methods:{
-
-    //Filters albums by genre at user's input
-    selectGenre(event){
-      this.selectedGenre = event.target.value;
-      if (this.selectedGenre === 'all'){
-        this.filteredAlbums = [...this.albums];
-      } else {
-        this.filteredAlbums = this.albums.filter(album => album.genre.toLowerCase() === this.selectedGenre.toLowerCase());
-      }
-    },
   },
   mounted(){
     //Imports data to albums ans filteredAlbums arrays
@@ -26,4 +15,14 @@ const mySpotify = new Vue({
       this.filteredAlbums = [...this.albums];
     });
   },
+
+  computed:{
+    //Filters albums by genre at user's input
+    filteredAlbums(){
+      if (this.selectedGenre === 'all'){
+        return this.albums;
+      }
+      return this.albums.filter(album => album.genre.toLowerCase() === this.selectedGenre.toLowerCase())
+    },
+  }
 });

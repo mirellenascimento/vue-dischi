@@ -26,16 +26,14 @@
 
         <div class="container genre-container">
           <label for="genre">Scegli per genere:</label>
-          <select @change="selectGenre($event)"  name="genre" id="genre">
+          <select v-model="selectedGenre" name="genre" id="genre">
             <option value="all">All</option>
              <option value="pop">Pop</option>
              <option value="rock">Rock</option>
              <option value="metal">Metal</option>
              <option value="jazz">Jazz</option>
           </select>
-
         </div>
-
 
         <div class="cds-container container">
             <!-- Disco ad esempio -->
@@ -47,10 +45,7 @@
             </div>
         </div>
 
-
-
       </div><!-- root end -->
-
 
         <script src="js/main.js" charset="utf-8"></script>
     </body>
